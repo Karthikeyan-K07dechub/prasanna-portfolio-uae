@@ -14,8 +14,8 @@ const pages = [
 
 const social = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/prasanna-el-13a6b27a/", icon: Linkedin },
-  { label: "Instagram", href: "https://www.instagram.com/PrasannEL.ai", icon: Instagram },
-  { label: "YouTube", href: "https://www.youtube.com/@purelypersonalpod", icon: Youtube },
+  { label: "Instagram", href: "https://www.instagram.com/prasanna_el/", icon: Instagram },
+  { label: "YouTube", href: "https://www.youtube.com/@PrasannaEL", icon: Youtube },
   { label: "Dechub", href: "https://dechub.in/", icon: Globe },
 ];
 
@@ -31,7 +31,7 @@ export function Footer() {
                 alt="Prasanna EL"
                 width={32}
                 height={32}
-                className="h-8 w-8 rounded-full object-cover"
+                className="h-8 w-8 shrink-0 rounded-full bg-[#6A14D1] object-contain object-center p-1"
               />
               <span className="text-xl font-semibold">Prasanna EL</span>
             </div>

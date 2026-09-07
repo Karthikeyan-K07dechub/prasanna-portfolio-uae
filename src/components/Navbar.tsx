@@ -17,10 +17,10 @@ export function Navbar() {
         <Link href="#hero" className="flex items-center gap-3">
           <Image
             src={images.avatar}
-            alt="Daniel Paul"
+            alt="Prasanna EL logo"
             width={36}
             height={36}
-            className="h-9 w-9 rounded-full object-cover"
+            className="h-9 w-9 shrink-0 rounded-full bg-[#6A14D1] object-contain object-center p-1"
           />
           <span className="text-xl font-bold tracking-tight">PRASANNA EL</span>
         </Link>
@@ -42,10 +42,10 @@ export function Navbar() {
             <a href="https://www.linkedin.com/in/prasanna-el-13a6b27a/" target="_blank" rel="noopener noreferrer" className="text-oslo-gray hover:text-white">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="https://www.instagram.com/danielpaul.ai" target="_blank" rel="noopener noreferrer" className="text-oslo-gray hover:text-white">
+            <a href="https://www.instagram.com/prasanna_el/" target="_blank" rel="noopener noreferrer" className="text-oslo-gray hover:text-white">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="https://www.youtube.com/@purelypersonalpod" target="_blank" rel="noopener noreferrer" className="text-oslo-gray hover:text-white">
+            <a href="https://www.youtube.com/@PrasannaEL" target="_blank" rel="noopener noreferrer" className="text-oslo-gray hover:text-white">
               <Youtube className="h-5 w-5" />
             </a>
           </div>

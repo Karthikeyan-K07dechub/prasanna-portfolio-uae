@@ -16,7 +16,10 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Paul — AI Expert & International Speaker",
+  icons: {
+    icon: "/images/logo.png",
+  },
+  title: "Prasanna EL — Entrepreneur, AI Expert & International Speaker",
   description:
     "AI Expert & International Speaker. Helping founders use AI to sharpen their message and build authority.",
 };
