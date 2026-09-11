@@ -83,12 +83,12 @@ function TestimonialCard({
           <div>
             <div className="flex items-center gap-1">
               <span className="text-sm font-medium">{name}</span>
-              <Linkedin className="h-3.5 w-3.5 text-oslo-gray" />
+              <Linkedin className="h-3.5 w-3.5 text-black" />
             </div>
-            <p className="text-xs text-oslo-gray">{role}</p>
+            <p className="text-xs text-black">{role}</p>
           </div>
         </div>
-        <p className="mt-4 text-base leading-6 text-oslo-gray grow">{quote}</p>
+        <p className="mt-4 text-base leading-6 text-black grow">{quote}</p>
       </div>
     </article>
   );
@@ -119,13 +119,13 @@ export function TestimonialsMarquee() {
     <section className="px-4 py-24 md:px-8">
       <div className="mb-8 flex items-end justify-between px-4">
         <div>
-          <p className="text-sm text-oslo-gray">What people say</p>
+          <p className="text-sm text-black">What people say</p>
           <h2 className="text-4xl font-semibold tracking-[-0.025em]">Testimonials</h2>
         </div>
-        <p className="hidden text-sm text-oslo-gray md:block">Real feedback from clients</p>
+        <p className="hidden text-sm text-black md:block">Real feedback from clients</p>
       </div>
 
-      <div className="relative overflow-hidden rounded-3xl border border-mine-shaft-2 bg-cod-gray/50">
+      <div className="relative overflow-hidden rounded-3xl border border-black bg-cod-gray/50">
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-40 bg-gradient-to-r from-cod-gray to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-40 bg-gradient-to-l from-cod-gray to-transparent" />
         <div className="divide-y divide-mine-shaft/80 py-8">

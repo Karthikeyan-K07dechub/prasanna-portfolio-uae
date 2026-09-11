@@ -1,65 +1,24 @@
-import { Calendar, Lightbulb, Rocket, Users } from "lucide-react";
-import { PrimaryButton } from "./ui/Button";
+import { Search, PenTool, Workflow, TrendingUp } from "lucide-react";
+import { PortfolioSection } from "./ui/PortfolioSection";
 
-const services = [
-  {
-    icon: Calendar,
-    title: "Post-Event Workshops",
-    description: "Deep-dive sessions that turn insights into action plans.",
-  },
-  {
-    icon: Rocket,
-    title: "Implementation Sprints",
-    description: "Focused execution windows with hands-on guidance.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Leadership Advisory Sessions",
-    description: "Strategic support for leadership teams ready to move.",
-  },
-  {
-    icon: Users,
-    title: "Done-For-You Onboarding",
-    description: "Full implementation for selected attendees.",
-  },
+const steps = [
+  { icon: Search, title: "Discover", description: "Understand the business, its audience, and the challenges before defining a clear direction." },
+  { icon: PenTool, title: "Design", description: "Shape brand and digital experiences around real customer needs and business objectives." },
+  { icon: Workflow, title: "Integrate", description: "Connect the tools, technology, and workflows that support consistent execution." },
+  { icon: TrendingUp, title: "Grow", description: "Refine through campaigns, testing, reporting, and ongoing optimization." },
 ];
 
 export function PostEvent() {
   return (
-    <section
-      className="px-4 py-16 md:px-16"
-      style={{
-        background:
-          "linear-gradient(175deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 50%, rgba(233, 12, 60, 0.05) 100%)",
-        boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
-      }}
-    >
-      <div className="spotlight-content space-y-12">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="text-sm font-medium uppercase tracking-[0.05em] text-red-ribbon">For Event Organizers</span>
-          <h2 className="mt-4 text-4xl font-medium leading-[48px] tracking-[-0.025em] md:text-5xl">
-            What Happens <span className="font-playfair italic text-oslo-gray">After</span> the Talk
-          </h2>
-          <p className="mt-4 text-lg leading-7 text-oslo-gray">
-            If your audience wants help implementing what they learn, I offer follow-up services that turn inspiration
-            into measurable outcomes.
-          </p>
-        </div>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
-            <div key={service.title} className="glass-card space-y-2 p-6">
-              <service.icon className="h-8 w-8 text-red-ribbon" />
-              <h3 className="text-lg font-medium">{service.title}</h3>
-              <p className="text-sm leading-5 text-oslo-gray">{service.description}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <PrimaryButton href="#contact">Discuss Post-Event Options</PrimaryButton>
-        </div>
+    <PortfolioSection id="process" eyebrow="05 / How Dechub works" title={<>From understanding to <span className="font-playfair italic">action.</span></>} description="Dechub’s process connects strategic direction with design, implementation, and continuous improvement.">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map((step, i) => (
+          <article key={step.title} className="h-full rounded-2xl border border-black/15 p-6">
+            <div className="mb-8 flex items-center justify-between"><step.icon className="h-6 w-6 text-black" aria-hidden="true" /><span className="text-sm tabular-nums">0{i + 1}</span></div>
+            <h3 className="text-xl font-semibold">{step.title}</h3><p className="mt-3 text-base leading-7">{step.description}</p>
+          </article>
+        ))}
       </div>
-    </section>
+    </PortfolioSection>
   );
 }

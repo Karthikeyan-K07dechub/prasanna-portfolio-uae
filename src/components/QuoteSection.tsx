@@ -1,25 +1,15 @@
-import { Quote } from "lucide-react";
+import { PortfolioSection } from "./ui/PortfolioSection";
 
 export function QuoteSection() {
   return (
-    <section
-      className="px-4 py-16 md:px-16"
-      style={{
-        background:
-          "linear-gradient(178deg, rgba(233, 12, 60, 0.05) 0%, rgba(233, 12, 60, 0) 50%, rgba(207, 163, 119, 0.05) 100%)",
-        boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
-      }}
-    >
-      <div className="spotlight-content flex flex-col items-center gap-6 py-8 text-center">
-        <Quote className="h-12 w-12 text-red-ribbon" />
-        <blockquote className="max-w-3xl text-3xl font-medium leading-10 md:text-4xl md:leading-10">
-          &ldquo;When I first met Prasanna, I was uncertain about my direction. He challenged me and helped me find{" "}
-          <span className="text-red-ribbon">clarity</span>.&rdquo;
-        </blockquote>
-        <p className="text-lg text-oslo-gray">
-          Trusted by founders and teams across multiple industries and regions.
-        </p>
+    <PortfolioSection id="philosophy" eyebrow="07 / Founder philosophy" title={<>Discipline. Clarity. <span className="font-playfair italic">Continuous improvement.</span></>}>
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+        <p className="text-lg leading-8">Prasanna’s outlook is shaped by persistence, strategic thinking, and a commitment to improving over time. His black belt in Karate reflects the discipline he values beyond business and brings into his professional life.</p>
+        <div className="border-l-2 border-black pl-6">
+          <h3 className="text-xl font-semibold">A practical mindset</h3>
+          <p className="mt-3 text-base leading-7">Understand the challenge, think deliberately, and keep refining the work. These values connect his personal journey with his approach to leading Dechub.</p>
+        </div>
       </div>
-    </section>
+    </PortfolioSection>
   );
 }

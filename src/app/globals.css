@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cod-gray: #0d0d0d;
-  --color-red-ribbon: #e90c3c;
-  --color-oslo-gray: #878c92;
-  --color-whiskey: #cfa377;
-  --color-mountain-meadow: #22c55e;
-  --color-mine-shaft: #262626;
-  --color-mine-shaft-2: #2e2e2e;
+  --color-brand: #731aca;
+  --color-cod-gray: #ffffff;
+  --color-red-ribbon: #731aca;
+  --color-oslo-gray: #000000;
+  --color-whiskey: #731aca;
+  --color-mountain-meadow: #731aca;
+  --color-mine-shaft: #ffffff;
+  --color-mine-shaft-2: #000000;
   --font-rethink: "Rethink Sans", ui-sans-serif, system-ui, sans-serif;
   --font-playfair: "Playfair Display", ui-serif, Georgia, serif;
 }
@@ -18,7 +19,7 @@
   }
 
   body {
-    @apply bg-cod-gray text-white antialiased;
+    @apply bg-cod-gray text-black antialiased;
     font-family: var(--font-rethink);
   }
 }
@@ -34,12 +35,12 @@
 
   .btn-primary {
     @apply inline-flex h-12 items-center justify-center gap-4 rounded-xl px-8 text-base font-bold text-white transition-opacity hover:opacity-90;
-    background: linear-gradient(90deg, #e90c3c 0%, #ff2200 100%);
+    background: linear-gradient(90deg, #731aca 0%, #731aca 100%);
   }
 
   .btn-outline {
-    @apply inline-flex h-12 items-center justify-center rounded-xl border px-8 text-base font-semibold text-white transition-colors hover:bg-white/5;
-    border-color: rgba(185, 189, 192, 0.5);
+    @apply inline-flex h-12 items-center justify-center rounded-xl border px-8 text-base font-semibold text-black transition-colors hover:bg-brand/5;
+    border-color: rgba(0, 0, 0, 0.5);
   }
 
   .badge-pill {
@@ -49,15 +50,15 @@
   .section-gradient {
     background: linear-gradient(
       169deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.1) 100%
+      rgba(115, 26, 202, 0.1) 0%,
+      rgba(115, 26, 202, 0) 50%,
+      rgba(115, 26, 202, 0.1) 100%
     );
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 0 1px rgba(115, 26, 202, 0.05);
   }
 
   .glass-card {
-    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
+    @apply rounded-2xl border border-black/15 bg-brand/5 backdrop-blur-sm;
   }
 
   .spotlight-content {

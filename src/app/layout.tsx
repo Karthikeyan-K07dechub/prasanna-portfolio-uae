@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/logo.png",
   },
-  title: "Prasanna EL — Entrepreneur, AI Expert & International Speaker",
+  title: "Prasanna EL — Founder of Dechub",
   description:
-    "AI Expert & International Speaker. Helping founders use AI to sharpen their message and build authority.",
+    "Prasanna EL, founder of Dechub. Connecting design, brand strategy, marketing, and technology to help businesses grow across India and the UAE.",
 };
 
 export default function RootLayout({

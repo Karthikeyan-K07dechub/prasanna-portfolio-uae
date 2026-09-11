@@ -58,7 +58,7 @@ export function OutlineButton({ href, children, external, className = "" }: Outl
 
 export function ExternalLinkText({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-red-ribbon hover:underline">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-black hover:underline">
       {children}
       <ExternalLink className="h-3.5 w-3.5" />
     </a>

@@ -15,13 +15,13 @@ export function LogoTicker() {
   const items = [...logos, ...logos];
 
   return (
-    <section className="relative overflow-hidden py-24">
-      <p className="mb-2 text-center text-sm font-medium uppercase tracking-[0.05em] text-oslo-gray">
+    <section className="relative overflow-hidden bg-brand py-24">
+      <p className="mb-2 text-center text-sm font-medium uppercase tracking-[0.05em] text-white">
         Trusted by teams at
       </p>
       <div className="relative">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-cod-gray to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-cod-gray to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-brand to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-brand to-transparent" />
         <div className="flex overflow-hidden py-6">
           <div className="ticker-track flex shrink-0 items-center gap-16">
             {items.map((logo, i) => (

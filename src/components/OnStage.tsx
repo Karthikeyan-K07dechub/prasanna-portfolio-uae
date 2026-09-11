@@ -1,64 +1,35 @@
 import Image from "next/image";
-import { images } from "@/lib/images";
-import { PrimaryButton } from "./ui/Button";
-
-const stageCaptions = [
-  "Daniel speaking at National Achievers Congress 2025",
-  "Daniel with audience participation",
-  "Daniel on stage - Best Kept Secret",
-  "Daniel speaking at Success Resources event",
-];
+import { ArrowUpRight } from "lucide-react";
+import { PortfolioSection } from "./ui/PortfolioSection";
 
 export function OnStage() {
   return (
-    <section className="py-20">
-      <div className="mx-auto max-w-4xl px-4 text-center">
-        <span className="inline-flex items-center rounded-full border border-red-ribbon/30 bg-red-ribbon/10 px-4 py-2 text-xs font-medium text-red-ribbon">
-          On Stage
-        </span>
-        <h2 className="mt-4 text-4xl font-medium leading-[60px] tracking-[-0.05em] md:text-[60px]">
-          Engaging audiences across{" "}
-          <span className="font-playfair italic text-oslo-gray">the globe</span>
-        </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-base font-medium leading-6 text-oslo-gray">
-          From intimate workshops to arenas of thousands — delivering AI insights that transform how founders think and
-          execute.
-        </p>
-        <div className="mt-4">
-          <PrimaryButton href="#contact">Book for Your Event</PrimaryButton>
-        </div>
-      </div>
-
-      <div className="relative mt-12 px-4 md:px-15">
-        <div
-          className="relative overflow-hidden"
-          style={{
-            maskImage:
-              "linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(0deg, transparent 0%, black 15%)",
-            WebkitMaskImage:
-              "linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%), linear-gradient(0deg, transparent 0%, black 15%)",
-            maskComposite: "intersect",
-          }}
-        >
-          <div className="onstage-marquee flex gap-4 pb-4">
-            {images.stage.concat(images.stage).map((src, index) => (
-              <div
-                key={`${src}-${index}`}
-                className="group relative h-[208px] w-[384px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_0_0_1px_rgba(255,255,255,0.1)] transition-transform duration-300 hover:-translate-y-1"
-              >
-                <Image
-                  src={src}
-                  alt={stageCaptions[index % stageCaptions.length]}
-                  fill
-                  className="object-cover grayscale transition duration-300 group-hover:grayscale-0"
-                  sizes="384px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              </div>
-            ))}
+    <PortfolioSection id="work" eyebrow="04 / Selected work" title={<>Ideas brought to <span className="font-playfair italic">life.</span></>} description="A selection of brand and digital work, including projects from Dechub and examples from Prasanna’s professional portfolio." tinted>
+      <article className="overflow-hidden rounded-3xl border border-black/15 bg-white">
+        <div className="grid lg:grid-cols-[1.2fr_1fr]">
+          <div className="relative aspect-video self-center bg-brand/5">
+            <Image src="/images/projects/tanishqcase.png" alt="Tanishq store discovery interface showing city selection and nearby boutiques" fill sizes="(max-width: 1023px) 100vw, 620px" className="object-contain" />
+          </div>
+          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+            <p className="text-xs font-semibold uppercase tracking-widest">Dechub project / Digital experience</p>
+            <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">Tanishq Store Discovery</h3>
+            <p className="mt-4 text-base leading-7">Helping customers find a boutique is part of the shopping experience. Dechub’s store-locator case study brings together interface design, web development, and location discovery.</p>
+            <p className="mt-4 text-sm leading-6">Dechub reports coverage of 400+ boutiques across India.</p>
+            <a href="https://www.dechub.in/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 self-start border-b border-black pb-1 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4">Explore work at Dechub <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
           </div>
         </div>
+      </article>
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        {[
+          { image: "/images/projects/digital-marketing.png", title: "Fastrack Campaign", category: "Campaign creative", description: "Fastrack Smart campaign artwork featured in Prasanna’s LinkedIn Services portfolio, bringing product and brand expression into a bold visual story.", alt: "Fastrack Smart Follow Yourself campaign artwork" },
+          { image: "/images/projects/branding.png", title: "Titan Brand Visual", category: "Brand communication", description: "A product-focused Titan watch visual, highlighting the craftsmanship, detail, and visual identity at the heart of brand presentation.", alt: "Titan watch close-up with black dial and rose-gold details" },
+        ].map(project => (
+          <article key={project.title} className="overflow-hidden rounded-3xl border border-black/15 bg-white">
+            <div className="relative aspect-video"><Image src={project.image} alt={project.alt} fill sizes="(max-width: 767px) 100vw, 540px" className="object-cover" /></div>
+            <div className="p-6 sm:p-8"><p className="text-xs font-semibold uppercase tracking-widest">{project.category}</p><h3 className="mt-3 text-2xl font-semibold">{project.title}</h3><p className="mt-3 text-base leading-7">{project.description}</p></div>
+          </article>
+        ))}
       </div>
-    </section>
+    </PortfolioSection>
   );
 }
