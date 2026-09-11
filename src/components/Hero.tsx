@@ -20,7 +20,7 @@ export function Hero() {
             alt="Prasanna EL, founder of Dechub"
             fill
             priority
-            className="object-cover object-center opacity-80"
+            className="object-cover object-center"
             sizes="100vw"
             style={{ objectPosition: "center 15%" }}
           />
@@ -28,7 +28,7 @@ export function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.75) 85%, rgba(255,255,255,1) 100%)",
+                "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.005) 45%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.055) 55%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0.22) 65%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0.52) 75%, rgba(255,255,255,0.70) 80%, rgba(255,255,255,0.85) 85%, rgba(255,255,255,0.95) 90%, rgba(255,255,255,0.99) 95%, rgba(255,255,255,1) 100%)",
             }}
           />
         </div>
@@ -36,14 +36,7 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.18) 30%, rgba(255, 255, 255, 0) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.15) 35%, rgba(255, 255, 255, 0) 100%)",
+              "linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0) 100%)",
           }}
         />
       </div>
@@ -51,8 +44,8 @@ export function Hero() {
       <div className="relative z-10 flex min-h-screen flex-col justify-end px-4 pb-16 pt-32 md:px-16 md:pb-16">
         <div className="mx-auto w-full max-w-6xl lg:px-8">
           <div className="space-y-8">
-            <h1 className="text-5xl font-medium leading-none tracking-[-0.05em] md:text-8xl md:leading-[128px]">
-              Prasanna <span className="font-playfair italic text-black">EL</span>
+            <h1 className="text-5xl font-medium leading-none tracking-[-0.05em] text-white md:text-8xl md:leading-[128px]">
+              Prasanna <span className="font-playfair italic text-white">EL</span>
             </h1>
             <p className="max-w-xl text-lg leading-7 text-black md:text-xl md:leading-7">
               Founder of Dechub. Bringing design, marketing, and technology

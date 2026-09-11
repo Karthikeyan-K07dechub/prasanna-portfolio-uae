@@ -35,7 +35,42 @@
 
   .btn-primary {
     @apply inline-flex h-12 items-center justify-center gap-4 rounded-xl px-8 text-base font-bold text-white transition-opacity hover:opacity-90;
-    background: linear-gradient(90deg, #731aca 0%, #731aca 100%);
+  }
+
+  .btn-primary {
+    background-color: #731aca;
+    background-image:
+      radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.28) 30%, transparent 65%),
+      linear-gradient(125deg, #9344e2 0%, #731aca 48%, #50108f 100%);
+    background-size: 140% 140%;
+    background-position: 0% 50%;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 4px 12px rgba(115, 26, 202, 0.16);
+    transition: background-position 250ms ease, box-shadow 250ms ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 1;
+    background-position: 100% 50%;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+      0 6px 18px rgba(115, 26, 202, 0.24);
+  }
+
+  .btn-primary:focus-visible,
+  #contact a[href^="mailto:"]:focus-visible {
+    outline: 2px solid #731aca;
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary,
+    #contact a[href^="mailto:"] {
+      transition: none;
+    }
   }
 
   .btn-outline {

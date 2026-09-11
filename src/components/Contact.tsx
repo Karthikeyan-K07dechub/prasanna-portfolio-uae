@@ -62,7 +62,7 @@ export function Contact() {
 
         <a
           href="mailto:prasanna@dechub.in"
-          className="inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 text-lg font-medium text-cod-gray transition-opacity hover:opacity-90"
+          className="inline-flex items-center gap-3 rounded-full border border-black bg-white px-8 py-4 text-lg font-medium text-black transition-opacity hover:opacity-90"
         >
           <Mail className="h-5 w-5" />
           prasanna@dechub.in
