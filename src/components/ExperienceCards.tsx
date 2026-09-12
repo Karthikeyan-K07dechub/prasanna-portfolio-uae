@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { PrimaryButton } from "./ui/Button";
 import { PortfolioSection } from "./ui/PortfolioSection";
 
 const insights = [
@@ -10,7 +11,7 @@ const insights = [
 export function ExperienceCards() {
   return (
     <PortfolioSection id="insights" eyebrow="06 / Insights & perspectives" title={<>Thinking behind the <span className="font-playfair italic">work.</span></>} description="Perspectives on AI, customer experience, and how businesses communicate, published by Prasanna on LinkedIn." tinted>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-3">
         {insights.map(item => (
           <article key={item.title} className="flex h-full flex-col rounded-2xl border border-black/15 bg-white p-6 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-widest">{item.category}</p>
@@ -19,6 +20,11 @@ export function ExperienceCards() {
             <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={`Read on LinkedIn: ${item.title}`} className="inline-flex items-center gap-2 self-start border-b border-black pb-1 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4">Read on LinkedIn <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
           </article>
         ))}
+      </div>
+      <div className="mt-10 flex justify-center">
+        <PrimaryButton href="https://www.linkedin.com/in/prasanna-el-13a6b27a/recent-activity/all/" external>
+          See more posts
+        </PrimaryButton>
       </div>
     </PortfolioSection>
   );

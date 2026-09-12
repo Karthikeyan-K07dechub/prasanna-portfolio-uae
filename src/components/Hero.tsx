@@ -5,7 +5,7 @@ import { OutlineButton, PrimaryButton } from "./ui/Button";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen overflow-hidden pt-24">
+    <section id="hero" className="relative min-h-svh overflow-hidden">
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 opacity-30"
@@ -14,7 +14,7 @@ export function Hero() {
               "linear-gradient(159deg, rgba(115,26,202, 0.1) 0%, rgba(115,26,202, 0) 50%, rgba(115,26,202, 0) 100%)",
           }}
         />
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-[75%] overflow-hidden sm:h-full">
           <Image
             src={images.hero}
             alt="Prasanna EL, founder of Dechub"
@@ -41,22 +41,22 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 flex min-h-screen flex-col justify-end px-4 pb-16 pt-32 md:px-16 md:pb-16">
-        <div className="mx-auto w-full max-w-6xl lg:px-8">
-          <div className="space-y-8">
-            <h1 className="text-5xl font-medium leading-none tracking-[-0.05em] text-white md:text-8xl md:leading-[128px]">
+      <div className="relative z-10 flex min-h-svh flex-col justify-end pb-10 pt-[55svh] sm:pb-16 lg:pt-40">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-5 sm:space-y-8">
+            <h1 className="text-[clamp(2.75rem,8vw,6rem)] font-medium leading-[1.12] tracking-[-0.05em] text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.65),0_0_16px_rgba(0,0,0,0.35)] sm:[text-shadow:none]">
               Prasanna <span className="font-playfair italic text-white">EL</span>
             </h1>
-            <p className="max-w-xl text-lg leading-7 text-black md:text-xl md:leading-7">
+            <p className="max-w-xl rounded-xl bg-white/90 p-4 text-lg leading-7 text-black md:text-xl md:leading-7 lg:rounded-none lg:bg-transparent lg:p-0">
               Founder of Dechub. Bringing design, marketing, and technology
               together to help brands grow.
             </p>
           </div>
 
-          <div className="mt-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-            <div className="flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-col items-start justify-between gap-6 sm:mt-12 lg:flex-row lg:items-end">
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
               <PrimaryButton href="#contact">Let&apos;s Connect</PrimaryButton>
-              <OutlineButton href="#work">Explore My Work</OutlineButton>
+              <OutlineButton href="#work">Explore Our Work</OutlineButton>
             </div>
             <a
               href="https://www.dechub.in/"

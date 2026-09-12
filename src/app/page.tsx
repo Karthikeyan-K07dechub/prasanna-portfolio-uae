@@ -9,10 +9,12 @@ import { OnStage } from "@/components/OnStage";
 import { PostEvent } from "@/components/PostEvent";
 import { QuoteSection } from "@/components/QuoteSection";
 import { SpeakingTopics } from "@/components/SpeakingTopics";
+import { ScrollMotion } from "@/components/ScrollMotion";
 
 export default function Home() {
   return (
     <>
+      <ScrollMotion />
       <Navbar />
       <main className="overflow-x-hidden">
         <Hero />

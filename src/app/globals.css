@@ -1,5 +1,50 @@
 @import "tailwindcss";
 
+/* Short, staggered entrances keep the portrait sharp and the layout stable. */
+@keyframes entrance-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes entrance-nav {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  nav[aria-label="Main navigation"] > div:first-child {
+    animation: entrance-nav 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  #hero h1,
+  #hero h1 + p,
+  #hero .mt-8 {
+    animation: entrance-rise 950ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  #hero h1 { animation-delay: 100ms; }
+  #hero h1 + p { animation-delay: 230ms; }
+  #hero .mt-8 { animation-delay: 360ms; }
+
+  #mobile-navigation {
+    animation: entrance-nav 250ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .btn-primary svg,
+  .btn-outline svg {
+    transition: transform 250ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover svg,
+    .btn-outline:hover svg { transform: translateX(3px); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 @theme {
   --color-brand: #731aca;
   --color-cod-gray: #ffffff;

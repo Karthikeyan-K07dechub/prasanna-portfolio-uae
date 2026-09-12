@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { PrimaryButton } from "./ui/Button";
 import { PortfolioSection } from "./ui/PortfolioSection";
 
 export function OnStage() {
@@ -15,7 +15,6 @@ export function OnStage() {
             <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">Tanishq Store Discovery</h3>
             <p className="mt-4 text-base leading-7">Helping customers find a boutique is part of the shopping experience. Dechub’s store-locator case study brings together interface design, web development, and location discovery.</p>
             <p className="mt-4 text-sm leading-6">Dechub reports coverage of 400+ boutiques across India.</p>
-            <a href="https://www.dechub.in/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 self-start border-b border-black pb-1 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4">Explore work at Dechub <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
           </div>
         </div>
       </article>
@@ -29,6 +28,11 @@ export function OnStage() {
             <div className="p-6 sm:p-8"><p className="text-xs font-semibold uppercase tracking-widest">{project.category}</p><h3 className="mt-3 text-2xl font-semibold">{project.title}</h3><p className="mt-3 text-base leading-7">{project.description}</p></div>
           </article>
         ))}
+      </div>
+      <div className="mt-10 flex justify-center">
+        <PrimaryButton href="https://www.dechub.in/" external>
+          Explore More Works
+        </PrimaryButton>
       </div>
     </PortfolioSection>
   );

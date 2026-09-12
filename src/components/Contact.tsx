@@ -42,9 +42,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="section-gradient px-4 py-20 md:px-[16px]"
+      className="section-gradient scroll-mt-28 px-4 py-10 sm:scroll-mt-32 sm:px-6 sm:py-12 lg:py-16"
     >
-      <div className="spotlight-content mx-auto max-w-lg space-y-8 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-lg space-y-8 text-center">
         <div>
           <h2 className="text-4xl font-medium leading-tight md:text-5xl">
             Let&apos;s make this event
@@ -62,9 +62,9 @@ export function Contact() {
 
         <a
           href="mailto:prasanna@dechub.in"
-          className="inline-flex items-center gap-3 rounded-full border border-black bg-white px-8 py-4 text-lg font-medium text-black transition-opacity hover:opacity-90"
+          className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-black bg-white px-4 py-4 text-base font-medium text-black transition-opacity hover:opacity-90 sm:gap-3 sm:px-8 sm:text-lg"
         >
-          <Mail className="h-5 w-5" />
+          <Mail className="h-5 w-5 shrink-0" />
           prasanna@dechub.in
         </a>
 

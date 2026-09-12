@@ -7,14 +7,14 @@ export function BeyondStage() {
   return (
     <PortfolioSection id="beyond" eyebrow="03 / Building Dechub" title={<>One connected <span className="font-playfair italic">experience.</span></>} description="Bringing brand, design, technology, and execution together around the needs of a business.">
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-        <div className="space-y-5 text-base leading-8">
+        <div data-reveal className="space-y-5 text-base leading-8">
           <h3 className="text-2xl font-semibold">The belief behind Dechub</h3>
           <p>Prasanna founded Dechub around a clear idea: businesses benefit when their brand, digital experiences, and operational systems work together.</p>
           <p>That belief shapes the company’s work across identity, digital products, content, campaigns, and automation, with a focus on consistency, practicality, and sustainable growth.</p>
-          <div className="pt-2"><PrimaryButton href="https://www.dechub.in/" external>Explore Dechub</PrimaryButton></div>
+          <div className="flex justify-center pt-2 sm:justify-start"><PrimaryButton href="https://www.dechub.in/" external>Explore Dechub</PrimaryButton></div>
         </div>
-        <div className="relative aspect-video overflow-hidden rounded-3xl border border-black/10">
-          <Image src="/images/dechub/dechub-team.png" alt="Office collaboration visual for Dechub" fill sizes="(max-width: 1023px) 100vw, 540px" className="object-cover" />
+        <div data-reveal className="relative aspect-video overflow-hidden rounded-3xl border border-black/10">
+          <Image src="/images/dechub/dechub-team.png" alt="Dechub logo surrounded by brand, design, technology, and automation visuals" fill sizes="(max-width: 1023px) 100vw, 540px" className="object-cover object-[center_56%]" />
         </div>
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
