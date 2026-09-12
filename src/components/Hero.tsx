@@ -20,9 +20,8 @@ export function Hero() {
             alt="Prasanna EL, founder of Dechub"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-[calc(50%+12px)_15%] sm:object-[center_15%]"
             sizes="100vw"
-            style={{ objectPosition: "center 15%" }}
           />
           <div
             className="absolute inset-0"
@@ -47,7 +46,7 @@ export function Hero() {
             <h1 className="text-[clamp(2.75rem,8vw,6rem)] font-medium leading-[1.12] tracking-[-0.05em] text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.65),0_0_16px_rgba(0,0,0,0.35)] sm:[text-shadow:none]">
               Prasanna <span className="font-playfair italic text-white">EL</span>
             </h1>
-            <p className="max-w-xl rounded-xl bg-white/90 p-4 text-lg leading-7 text-black md:text-xl md:leading-7 lg:rounded-none lg:bg-transparent lg:p-0">
+            <p className="max-w-xl rounded-xl bg-transparent p-4 text-lg leading-7 text-black sm:bg-white/90 md:text-xl md:leading-7 lg:rounded-none lg:bg-transparent lg:p-0">
               Founder of Dechub. Bringing design, marketing, and technology
               together to help brands grow.
             </p>
