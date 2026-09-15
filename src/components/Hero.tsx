@@ -49,8 +49,9 @@ export function Hero() {
       <div className="relative z-10 flex min-h-svh flex-col justify-end pb-10 pt-[55svh] sm:pb-16 lg:pt-40">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-5 sm:space-y-8">
-            <h1 className="text-[clamp(2.75rem,8vw,6rem)] font-medium leading-[1.12] tracking-[-0.05em] text-black">
-              {t("Anas")} </h1>
+            <h1 aria-label={t("Anas")} className="font-playfair text-[clamp(2.75rem,8vw,6rem)] font-medium italic leading-[1.12] tracking-[-0.05em]">
+              <span aria-hidden="true" className="uae-flag-text-red">A</span><span aria-hidden="true" className="uae-flag-text -ms-[0.08em]">nas</span>
+            </h1>
             <p className="max-w-xl rounded-xl bg-transparent p-4 text-lg leading-7 text-black sm:bg-sand/90 md:text-xl md:leading-7 lg:rounded-none lg:bg-transparent lg:p-0">
               {t("Founder of Dechub. Bringing design, marketing, and technology together to help brands grow.")} </p>
           </div>
@@ -67,7 +68,7 @@ export function Hero() {
               className="flex items-center gap-3 text-sm text-black transition-colors hover:text-black"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-black/10">
-                <Globe className="h-5 w-5" aria-hidden="true" />
+                <Globe className="h-5 w-5 text-section-title" aria-hidden="true" />
               </span>
               <bdi>dechub.in</bdi> <span className="directional-arrow" aria-hidden="true">→</span>
             </a>

@@ -69,6 +69,7 @@ html[dir="rtl"] #contact :is(input, textarea)::placeholder { text-align: right; 
   --color-surface: #F5F5F5;
   --color-sand-light: #FDFCF8;
   --color-sand-accent: #E9DED4;
+  --color-section-title: #9b6131;
   --color-red-ribbon: #00843D;
   --color-oslo-gray: #000000;
   --color-whiskey: #00843D;
@@ -97,6 +98,24 @@ html[dir="rtl"] #contact :is(input, textarea)::placeholder { text-align: right; 
 
   .text-gradient-heading {
     @apply font-playfair italic text-oslo-gray;
+  }
+
+  .uae-flag-text {
+    display: inline-block;
+    color: transparent;
+    background:
+      linear-gradient(180deg, #009A44 0 56%, #FFFFFF 56% 66%, #000000 66% 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.12);
+    filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.16));
+  }
+
+  .uae-flag-text-red {
+    display: inline-block;
+    color: #CE1126;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.12);
+    filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.16));
   }
 
   .btn-primary {

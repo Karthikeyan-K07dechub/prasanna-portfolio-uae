@@ -88,8 +88,8 @@ export function Contact() {
     <section id="contact" className="section-gradient scroll-mt-28 px-4 py-10 sm:scroll-mt-32 sm:px-6 sm:py-12 lg:py-16">
       <div className="relative z-10 mx-auto w-full max-w-lg space-y-8 text-center">
         <div>
-          <h2 className="text-4xl font-medium leading-tight md:text-5xl">
-            {t("Let's start a")}<br /><span className="font-playfair italic text-black">{t("conversation.")}</span>
+          <h2 className="text-4xl font-medium leading-tight text-section-title md:text-5xl">
+            {t("Let's start a")}<br /><span className="font-playfair italic">{t("conversation.")}</span>
           </h2>
           <p className="mt-6 text-lg text-black">{t("Have a project, collaboration, or question in mind? Get in touch.")}</p>
         </div>

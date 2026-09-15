@@ -21,7 +21,7 @@ export function ExperienceCards() {
             <p className="text-xs font-semibold uppercase tracking-widest">{t(item.category)}</p>
             <h3 className="mt-6 text-2xl font-semibold leading-snug">{t(item.title)}</h3>
             <p className="mb-8 mt-4 flex-1 text-base leading-7">{t(item.description)}</p>
-            <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={`${t("Read on LinkedIn")}: ${t(item.title)}`} className="inline-flex items-center gap-2 self-start border-b border-black pb-1 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4">{t("Read on LinkedIn")} <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
+            <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={`${t("Read on LinkedIn")}: ${t(item.title)}`} className="inline-flex items-center gap-2 self-start border-b border-black pb-1 text-sm font-semibold transition-colors hover:border-section-title hover:text-section-title focus-visible:outline-2 focus-visible:outline-offset-4">{t("Read on LinkedIn")} <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
           </article>
         ))}
       </div>

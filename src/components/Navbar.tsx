@@ -51,9 +51,9 @@ export function Navbar() {
             alt={t("Anas logo")}
             width={36}
             height={36}
-            className="h-9 w-9 shrink-0 rounded-full bg-[#00843D] object-contain object-center p-1"
+            className="h-9 w-9 shrink-0 rounded-full object-cover object-center"
           />
-          <span className="whitespace-nowrap text-base font-bold tracking-tight sm:text-xl">{t("ANAS")}</span>
+          <span className="font-playfair whitespace-nowrap text-base font-bold italic tracking-tight text-section-title sm:text-xl">{t("ANAS")}</span>
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -61,7 +61,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="inline-flex min-h-11 items-center text-sm font-medium text-black transition-colors hover:text-black"
+              className="inline-flex min-h-11 items-center text-sm font-medium text-black transition-colors hover:text-section-title"
             >
               {t(link.label)}
             </Link>
@@ -70,13 +70,13 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <div className="flex items-center gap-1">
-            <a href="https://www.linkedin.com/in/prasanna-el-13a6b27a/" target="_blank" rel="noopener noreferrer" aria-label={t("LinkedIn")} className="inline-flex h-11 w-11 items-center justify-center text-black">
+            <a href="https://www.linkedin.com/in/prasanna-el-13a6b27a/" target="_blank" rel="noopener noreferrer" aria-label={t("LinkedIn")} className="inline-flex h-11 w-11 items-center justify-center text-section-title">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="https://www.instagram.com/prasanna_el/" target="_blank" rel="noopener noreferrer" aria-label={t("Instagram")} className="inline-flex h-11 w-11 items-center justify-center text-black">
+            <a href="https://www.instagram.com/prasanna_el/" target="_blank" rel="noopener noreferrer" aria-label={t("Instagram")} className="inline-flex h-11 w-11 items-center justify-center text-section-title">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="https://www.youtube.com/@PrasannaEL" target="_blank" rel="noopener noreferrer" aria-label={t("YouTube")} className="inline-flex h-11 w-11 items-center justify-center text-black">
+            <a href="https://www.youtube.com/@PrasannaEL" target="_blank" rel="noopener noreferrer" aria-label={t("YouTube")} className="inline-flex h-11 w-11 items-center justify-center text-section-title">
               <Youtube className="h-5 w-5" />
             </a>
           </div>
@@ -90,13 +90,13 @@ export function Navbar() {
       </div>
       {menuOpen && (
         <div id="mobile-navigation" className="mx-auto mt-2 max-h-[calc(100dvh-7rem)] max-w-6xl overflow-y-auto rounded-2xl border border-black/15 bg-surface p-4 shadow-lg lg:hidden">
-          {navLinks.map(link => <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center rounded-lg px-3 font-medium hover:bg-brand/5">{t(link.label)}</Link>)}
+          {navLinks.map(link => <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="flex min-h-11 items-center rounded-lg px-3 font-medium text-black transition-colors hover:bg-brand/5 hover:text-section-title">{t(link.label)}</Link>)}
           <div className="my-3 flex flex-wrap gap-2 border-t border-black/10 pt-3">
             {[
               { label: "LinkedIn", href: "https://www.linkedin.com/in/prasanna-el-13a6b27a/", Icon: Linkedin },
               { label: "Instagram", href: "https://www.instagram.com/prasanna_el/", Icon: Instagram },
               { label: "YouTube", href: "https://www.youtube.com/@PrasannaEL", Icon: Youtube },
-            ].map(({ label, href, Icon }) => <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={t(label)} className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-black/15"><Icon className="h-5 w-5" /></a>)}
+            ].map(({ label, href, Icon }) => <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={t(label)} className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-black/15 text-section-title"><Icon className="h-5 w-5" /></a>)}
           </div>
           <Link href="#contact" onClick={() => setMenuOpen(false)} className="btn-primary w-full">{t("Contact Anas")}</Link>
         </div>

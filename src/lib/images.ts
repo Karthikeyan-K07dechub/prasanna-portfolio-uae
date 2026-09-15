@@ -1,7 +1,7 @@
 export const images = {
   hero: "/images/prasanna-hero-removebg-preview.png",
   about: "/images/about-prasanna-fc95d7.png",
-  avatar: "/images/logo.png",
+  avatar: "/images/logo.png?v=green",
   video: "/images/video-thumbnail.png",
   stage: [
     "/images/stage-1-6cc4de.png",

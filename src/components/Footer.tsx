@@ -26,14 +26,14 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_0.8fr]">
           <div>
             <Link href="#hero" className="inline-flex items-center gap-3">
-              <Image src={images.avatar} alt={t("Anas logo")} width={32} height={32} className="h-8 w-8 shrink-0 rounded-full bg-brand object-contain p-1" />
-              <span className="text-xl font-semibold">{t("Anas")}</span>
+              <Image src={images.avatar} alt={t("Anas logo")} width={32} height={32} className="h-8 w-8 shrink-0 rounded-full object-cover" />
+              <span className="font-playfair text-xl font-semibold italic text-section-title">{t("Anas")}</span>
             </Link>
             <p className="mt-4 max-w-sm text-base leading-7">{t("Founder of Dechub. Bringing design, marketing, and technology together to help brands grow.")}</p>
-            <a dir="ltr" href="mailto:prasanna@dechub.in" className="mt-4 inline-block text-sm underline underline-offset-4">prasanna@dechub.in</a>
+            <a dir="ltr" href="mailto:prasanna@dechub.in" className="mt-4 inline-block text-sm underline underline-offset-4 transition-colors hover:text-section-title">prasanna@dechub.in</a>
           </div>
-          <div><h2 className="text-base font-semibold">{t("Explore")}</h2><ul className="mt-4 space-y-3">{pages.map(item => <li key={item.href}><Link href={item.href} className="text-sm hover:underline">{t(item.label)}</Link></li>)}</ul></div>
-          <div><h2 className="text-base font-semibold">{t("Connect")}</h2><ul className="mt-4 space-y-3">{social.map(item => <li key={t(item.label)}><a href={item.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm hover:underline"><item.icon className="h-4 w-4" aria-hidden="true" />{t(item.label)}</a></li>)}</ul></div>
+          <div><h2 className="text-base font-semibold text-section-title">{t("Explore")}</h2><ul className="mt-4 space-y-3">{pages.map(item => <li key={item.href}><Link href={item.href} className="text-sm transition-colors hover:text-section-title hover:underline">{t(item.label)}</Link></li>)}</ul></div>
+          <div><h2 className="text-base font-semibold text-section-title">{t("Connect")}</h2><ul className="mt-4 space-y-3">{social.map(item => <li key={t(item.label)}><a href={item.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm transition-colors hover:text-section-title hover:underline"><item.icon className="h-4 w-4 text-section-title" aria-hidden="true" />{t(item.label)}</a></li>)}</ul></div>
         </div>
         <p className="mt-10 border-t border-black/15 pt-6 text-sm">© {new Date().getFullYear()} {t("Anas")}</p>
       </div>
