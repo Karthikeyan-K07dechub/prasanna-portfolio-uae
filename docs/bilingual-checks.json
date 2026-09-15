@@ -1,0 +1,100 @@
+{
+  "viewports": [
+    {
+      "locale": "en",
+      "width": 320,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "en",
+      "width": 768,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "en",
+      "width": 1024,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "en",
+      "width": 1920,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "ar",
+      "width": 320,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "ar",
+      "width": 390,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "ar",
+      "width": 768,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "ar",
+      "width": 1024,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "ar",
+      "width": 1440,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    },
+    {
+      "locale": "ar",
+      "width": 1920,
+      "overflow": false,
+      "brokenAnchors": 0,
+      "clippedText": []
+    }
+  ],
+  "languageSwitch": true,
+  "draftPreserved": true,
+  "mobileMenu": true,
+  "localizedValidation": true,
+  "mockedFormStates": [
+    "offline",
+    "server error",
+    "sending",
+    "duplicate guard",
+    "success"
+  ],
+  "browserErrors": []
+}

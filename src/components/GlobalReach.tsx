@@ -8,8 +8,8 @@ export function GlobalReach() {
       className="px-4 py-16 md:px-16"
       style={{
         background:
-          "linear-gradient(175deg, rgba(115,26,202, 0.1) 0%, rgba(115,26,202, 0) 50%, rgba(115,26,202, 0.1) 100%)",
-        boxShadow: "inset 0 0 0 1px rgba(115,26,202, 0.05)",
+          "linear-gradient(175deg, rgba(0,132,61, 0.1) 0%, rgba(0,132,61, 0) 50%, rgba(0,132,61, 0.1) 100%)",
+        boxShadow: "inset 0 0 0 1px rgba(0,132,61, 0.05)",
       }}
     >
       <div className="spotlight-content grid items-center gap-10 lg:grid-cols-2">
@@ -51,7 +51,7 @@ export function GlobalReach() {
                     className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2"
                     style={{ transform: `translate(${x}px, ${y}px)` }}
                   >
-                    <div className="rotate-counter flex h-full w-full items-center justify-center rounded-full border-2 border-black/50 bg-[#ffffff] text-3xl shadow-lg">
+                    <div className="rotate-counter flex h-full w-full items-center justify-center rounded-full border-2 border-black/50 bg-sand text-3xl shadow-lg">
                       {flag}
                     </div>
                   </div>

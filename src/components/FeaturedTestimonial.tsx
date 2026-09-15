@@ -121,7 +121,7 @@ export function FeaturedTestimonial() {
                 left: index * 32,
                 width: `calc(100% - ${index * 32}px)`,
                 zIndex: active === index + 1 ? 30 : 20 - index,
-                background: "linear-gradient(185deg, rgba(115,26,202, 0.1) 0%, rgba(115,26,202, 0) 100%)",
+                background: "linear-gradient(185deg, rgba(0,132,61, 0.1) 0%, rgba(0,132,61, 0) 100%)",
               }}
             >
               <div className="mb-4 flex gap-1">

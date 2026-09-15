@@ -1,5 +1,5 @@
 export const images = {
-  hero: "/images/prasanna-hero.png",
+  hero: "/images/prasanna-hero-removebg-preview.png",
   about: "/images/about-prasanna-fc95d7.png",
   avatar: "/images/logo.png",
   video: "/images/video-thumbnail.png",

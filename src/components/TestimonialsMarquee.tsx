@@ -8,28 +8,28 @@ const row1 = [
     role: "Mental Coach",
     image: images.testimonials.bernadette,
     quote:
-      "When I first met Prasanna, my soul responded. It's a rare thing to come across someone who is not only a true expert in his field but genuinely cares about your growth.",
+      "When I first met Anas, my soul responded. It's a rare thing to come across someone who is not only a true expert in his field but genuinely cares about your growth.",
   },
   {
     name: "Liana F.",
     role: "Educational Consultant",
     image: images.testimonials.liana,
     quote:
-      "Exceptional Mentor and AI Expert. I have had the privilege of being mentored by Prasanna EL in NAS Academy, where he transformed how I think about content and AI.",
+      "Exceptional Mentor and AI Expert. I have had the privilege of being mentored by Anas in NAS Academy, where he transformed how I think about content and AI.",
   },
   {
     name: "Marius G.",
     role: "Founder of Cruise Smart Travel",
     image: images.testimonials.marius,
     quote:
-      "Let me tell you a story about how I ended up working with Prasanna! I met Prasanna for the first time at GBI. He was on stage, and his energy was magnetic.",
+      "Let me tell you a story about how I ended up working with Anas! I met Anas for the first time at GBI. He was on stage, and his energy was magnetic.",
   },
   {
     name: "Karthikeyan M.",
     role: "Senior Tech Product Manager",
     image: images.testimonials.karthikeyan,
     quote:
-      "I had the privilege to work with Prasanna. He didn't just help me write on LinkedIn, he encouraged me to find my own voice and build authentic connections.",
+      "I had the privilege to work with Anas. He didn't just help me write on LinkedIn, he encouraged me to find my own voice and build authentic connections.",
   },
 ];
 
@@ -39,7 +39,7 @@ const row2 = [
     role: "Mind Mapping Coach",
     image: images.testimonials.subra,
     quote:
-      "A Heartfelt Gratitude to Coach Prasanna EL! I had the privilege of being mentored by Prasanna EL over the past few months. His guidance has been transformational.",
+      "A Heartfelt Gratitude to Coach Anas! I had the privilege of being mentored by Anas over the past few months. His guidance has been transformational.",
   },
   {
     name: "Dasha B.",
@@ -60,7 +60,7 @@ const row2 = [
     role: "SVP and New Jersey Market Manager",
     image: images.testimonials.luis,
     quote:
-      "If you're serious about building a powerful personal brand and scaling your business, Prasanna EL is the coach you need. Absolutely transformative.",
+      "If you're serious about building a powerful personal brand and scaling your business, Anas is the coach you need. Absolutely transformative.",
   },
 ];
 

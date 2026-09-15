@@ -1,0 +1,68 @@
+[
+  {
+    "width": 390,
+    "viewport": 375,
+    "documentWidth": 375,
+    "sections": [
+      "hero",
+      "about",
+      "expertise",
+      "beyond",
+      "work",
+      "process",
+      "insights",
+      "philosophy",
+      "contact"
+    ],
+    "overflow": [],
+    "textOverflow": [],
+    "brokenAnchors": [],
+    "navWidth": 375,
+    "menuOpened": true,
+    "escapeClosed": true,
+    "linkClosed": true
+  },
+  {
+    "width": 768,
+    "viewport": 753,
+    "documentWidth": 753,
+    "sections": [
+      "hero",
+      "about",
+      "expertise",
+      "beyond",
+      "work",
+      "process",
+      "insights",
+      "philosophy",
+      "contact"
+    ],
+    "overflow": [],
+    "textOverflow": [],
+    "brokenAnchors": [],
+    "navWidth": 753,
+    "menuOpened": true,
+    "escapeClosed": true,
+    "linkClosed": true
+  },
+  {
+    "width": 1440,
+    "viewport": 1425,
+    "documentWidth": 1425,
+    "sections": [
+      "hero",
+      "about",
+      "expertise",
+      "beyond",
+      "work",
+      "process",
+      "insights",
+      "philosophy",
+      "contact"
+    ],
+    "overflow": [],
+    "textOverflow": [],
+    "brokenAnchors": [],
+    "navWidth": 1425
+  }
+]

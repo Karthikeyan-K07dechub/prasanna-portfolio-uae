@@ -4,7 +4,7 @@ export function PortfolioSection({ id, eyebrow, title, description, children, ti
   id: string; eyebrow: string; title: ReactNode; description?: string; children: ReactNode; tinted?: boolean;
 }) {
   return (
-    <section id={id} data-motion-section className={`scroll-mt-32 border-t border-black/10 py-10 sm:py-12 lg:py-16 ${tinted ? "bg-brand/5" : "bg-white"}`}>
+    <section id={id} data-motion-section className={`scroll-mt-32 border-t border-black/10 py-10 sm:py-12 lg:py-16 ${tinted ? "bg-sand-light" : "warm-background"}`}>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div data-reveal className="mb-7 max-w-3xl sm:mb-8">
           <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-black">

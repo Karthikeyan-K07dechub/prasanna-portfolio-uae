@@ -12,7 +12,7 @@ export function VideoSection() {
           <div className="relative aspect-video w-full">
             <Image
               src={images.video}
-              alt="Watch Prasanna in Action"
+              alt="Watch Anas in Action"
               fill
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
@@ -22,14 +22,14 @@ export function VideoSection() {
               aria-label="Play video"
               className="absolute inset-0 flex items-center justify-center"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-red-ribbon shadow-[0_4px_6px_-4px_rgba(115,26,202,0.1),0_10px_15px_-3px_rgba(115,26,202,0.1),0_0_0_1px_rgba(115,26,202,0.1)]">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-red-ribbon shadow-[0_4px_6px_-4px_rgba(0,132,61,0.1),0_10px_15px_-3px_rgba(0,132,61,0.1),0_0_0_1px_rgba(0,132,61,0.1)]">
                 <Play className="ml-0.5 h-6 w-6 fill-white text-white" />
               </span>
             </button>
             <div
               className="absolute inset-x-0 bottom-0 p-3"
               style={{
-                background: "linear-gradient(0deg, rgba(115,26,202, 0.6) 0%, rgba(115,26,202, 0) 100%)",
+                background: "linear-gradient(0deg, rgba(0,132,61, 0.6) 0%, rgba(0,132,61, 0) 100%)",
               }}
             >
               <div className="flex items-center justify-between text-[11px] text-white">
@@ -47,9 +47,9 @@ export function VideoSection() {
           </div>
         </div>
         <div className="mt-5 space-y-2">
-          <p className="text-lg font-medium text-black">Watch Prasanna in Action</p>
+          <p className="text-lg font-medium text-black">Watch Anas in Action</p>
           <p className="text-sm leading-5 text-black">
-            &ldquo;See how Prasanna captivates audiences and delivers transformative insights on stage.&rdquo;
+            &ldquo;See how Anas captivates audiences and delivers transformative insights on stage.&rdquo;
           </p>
         </div>
       </div>

@@ -1,190 +1,129 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Mail } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
+
+type Draft = { name: string; phone: string; email: string; message: string };
+type Status = "idle" | "sending" | "success" | "error";
+const emptyDraft: Draft = { name: "", phone: "", email: "", message: "" };
+const draftKey = "anas-contact-draft";
+const statusText: Record<Status, string> = {
+  idle: "Let's discuss how we can work together.", sending: "Sending...",
+  success: "Message sent successfully!", error: "Something went wrong. Please try again.",
+};
 
 export function Contact() {
-  const [result, setResult] = useState("");
-  
-  const onSubmit = async (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
-    event.preventDefault();
-    const form = event.currentTarget;
+  const { t, locale } = useLanguage();
+  const [draft, setDraft] = useState<Draft>(emptyDraft);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errors, setErrors] = useState<Partial<Record<keyof Draft, string>>>({});
+  const submitting = useRef(false);
 
-    setResult("Sending...");
-
-    const formData = new FormData(form);
-
-    formData.append(
-      "access_key",
-      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || ""
-    );
-    const response = await fetch(
-      "https://api.web3forms.com/submit",
-      {
-        method: "POST",
-        body: formData,
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(draftKey) || "null");
+      if (saved && Object.keys(emptyDraft).every(key => typeof saved[key] === "string")) {
+        setDraft({ name: saved.name, phone: saved.phone, email: saved.email, message: saved.message });
       }
-    );
+    } catch { /* Storage may be unavailable; the form still works. */ }
+  }, []);
 
-    const data = await response.json();
+  function update(field: keyof Draft, value: string) {
+    const next = { ...draft, [field]: value };
+    setDraft(next);
+    setErrors(previous => ({ ...previous, [field]: undefined }));
+    if (status !== "sending") setStatus("idle");
+    try { sessionStorage.setItem(draftKey, JSON.stringify(next)); } catch { /* Optional draft persistence. */ }
+  }
 
-    if (data.success) {
-      setResult("Message sent successfully!");
-      form.reset();
-    } else {
-      console.error(data);
-      setResult("Something went wrong. Please try again.");
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitting.current) return;
+    const form = event.currentTarget;
+    const validation: Partial<Record<keyof Draft, string>> = {};
+    if (!draft.name.trim()) validation.name = "Please enter your name.";
+    const email = form.elements.namedItem("email") as HTMLInputElement;
+    if (!draft.email.trim() || !email.validity.valid) validation.email = "Please enter a valid email address.";
+    if (!draft.message.trim()) validation.message = "Please enter your message.";
+    setErrors(validation);
+    const firstInvalid = Object.keys(validation)[0];
+    if (firstInvalid) {
+      (form.elements.namedItem(firstInvalid) as HTMLElement).focus();
+      return;
     }
-  };
+    // Capture enabled fields before React renders the sending state.
+    const data = new FormData(form);
+    submitting.current = true;
+    setStatus("sending");
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
+    try {
+      data.set("from_name", "Anas Portfolio");
+      data.set("subject", "New Portfolio Enquiry — Anas");
+      data.set("language", locale === "ar" ? "Arabic" : "English");
+      data.set("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
+      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data, signal: controller.signal });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error("Submission failed");
+      setStatus("success");
+      setDraft(emptyDraft);
+      try { sessionStorage.removeItem(draftKey); } catch { /* Optional draft persistence. */ }
+    } catch {
+      setStatus("error");
+    } finally {
+      window.clearTimeout(timeout);
+      submitting.current = false;
+    }
+  }
+
+  const fields = [
+    { name: "name", label: "Your name", type: "text", autoComplete: "name", required: true },
+    { name: "phone", label: "Phone number (optional)", type: "tel", autoComplete: "tel", required: false },
+    { name: "email", label: "Your email", type: "email", autoComplete: "email", required: true },
+  ] as const;
+  const fieldClass = "w-full rounded-xl border border-black bg-surface px-4 py-3.5 text-black placeholder:text-black focus-visible:outline-2 focus-visible:outline-brand focus-visible:outline-offset-2 disabled:opacity-70";
 
   return (
-    <section
-      id="contact"
-      className="section-gradient scroll-mt-28 px-4 py-10 sm:scroll-mt-32 sm:px-6 sm:py-12 lg:py-16"
-    >
+    <section id="contact" className="section-gradient scroll-mt-28 px-4 py-10 sm:scroll-mt-32 sm:px-6 sm:py-12 lg:py-16">
       <div className="relative z-10 mx-auto w-full max-w-lg space-y-8 text-center">
         <div>
           <h2 className="text-4xl font-medium leading-tight md:text-5xl">
-            Let&apos;s make this event
-            <br />
-            <span className="font-playfair italic text-black">
-              matter.
-            </span>
+            {t("Let's start a")}<br /><span className="font-playfair italic text-black">{t("conversation.")}</span>
           </h2>
-
-          <p className="mt-6 text-lg text-black">
-            Have an event in mind? Let&apos;s create something your audience
-            actually uses.
-          </p>
+          <p className="mt-6 text-lg text-black">{t("Have a project, collaboration, or question in mind? Get in touch.")}</p>
         </div>
-
-        <a
-          href="mailto:prasanna@dechub.in"
-          className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-black bg-white px-4 py-4 text-base font-medium text-black transition-opacity hover:opacity-90 sm:gap-3 sm:px-8 sm:text-lg"
-        >
-          <Mail className="h-5 w-5 shrink-0" />
-          prasanna@dechub.in
+        <a href="mailto:prasanna@dechub.in" dir="ltr" className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-black bg-surface px-4 py-4 text-base font-medium text-black transition-opacity hover:opacity-90 sm:gap-3 sm:px-8 sm:text-lg">
+          <Mail className="h-5 w-5 shrink-0" aria-hidden="true" />prasanna@dechub.in
         </a>
-
-        <form
-          onSubmit={onSubmit}
-          className="space-y-4 text-left"
-        >
-          {/* Event Name & Location */}
+        <form onSubmit={onSubmit} noValidate className="space-y-4 text-start" aria-busy={status === "sending"}>
           <div className="grid gap-4 sm:grid-cols-2">
-            <input
-              type="text"
-              name="event_name"
-              placeholder="Event name"
-              required
-              className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-            />
-
-            <input
-              type="text"
-              name="location"
-              placeholder="Location"
-              required
-              className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-            />
+            {fields.map(field => (
+              <div key={field.name} className={field.name === "email" ? "sm:col-span-2" : ""}>
+                <label className="sr-only" htmlFor={`contact-${field.name}`}>{t(field.label)}</label>
+                <input id={`contact-${field.name}`} name={field.name} type={field.type} autoComplete={field.autoComplete}
+                  required={field.required} placeholder={t(field.label)} dir={field.name === "name" ? "auto" : "ltr"}
+                  value={draft[field.name]} onChange={event => update(field.name, event.target.value)} disabled={status === "sending"}
+                  aria-invalid={!!errors[field.name]} aria-describedby={errors[field.name] ? `error-${field.name}` : undefined}
+                  className={fieldClass} />
+                {errors[field.name] && <p id={`error-${field.name}`} className="mt-2 text-sm text-red-800">{t(errors[field.name]!)}</p>}
+              </div>
+            ))}
           </div>
-
-          {/* Audience Size & Format */}
-          <div className="grid gap-4 sm:grid-cols-2">
-            <input
-              type="text"
-              name="audience_size"
-              placeholder="Audience size (e.g., 200 founders)"
-              required
-              className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-            />
-
-            <select
-              name="format"
-              defaultValue=""
-              required
-              className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black focus:border-black/50 focus:outline-none"
-            >
-              <option value="" disabled>
-                Format
-              </option>
-
-              <option value="Keynote">
-                Keynote
-              </option>
-
-              <option value="Workshop">
-                Workshop
-              </option>
-
-              <option value="Hybrid">
-                Hybrid
-              </option>
-            </select>
+          <div>
+            <label className="sr-only" htmlFor="contact-message">{t("Your message")}</label>
+            <textarea id="contact-message" name="message" placeholder={t("Tell me about your project, collaboration, or enquiry...")}
+              required rows={4} dir="auto" value={draft.message} onChange={event => update("message", event.target.value)}
+              disabled={status === "sending"} aria-invalid={!!errors.message} aria-describedby={errors.message ? "error-message" : undefined}
+              className={`${fieldClass} resize-y`} />
+            {errors.message && <p id="error-message" className="mt-2 text-sm text-red-800">{t(errors.message)}</p>}
           </div>
-
-          {/* Desired Outcome */}
-          <input
-            type="text"
-            name="desired_outcome"
-            placeholder="Desired outcome"
-            required
-            className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-          />
-
-          {/* Phone & Name */}
-          <div className="grid gap-4 sm:grid-cols-2">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              required
-              className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-            />
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone number"
-              autoComplete="tel"
-              required
-              className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-            />
-          </div>
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email"
-            required
-            className="w-full rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-          />
-
-          {/* Additional Message */}
-          <textarea
-            name="message"
-            placeholder="Tell us more about your event..."
-            rows={4}
-            className="w-full resize-none rounded-xl border border-black bg-mine-shaft px-4 py-3.5 text-black placeholder:text-black focus:border-black/50 focus:outline-none"
-          />
-
-          <button
-            type="submit"
-            className="btn-primary flex w-full cursor-pointer items-center justify-center gap-2"
-          >
-            Request Booking
-            <ArrowRight className="h-4 w-4" />
+          <button type="submit" disabled={status === "sending"} className="btn-primary flex w-full cursor-pointer items-center justify-center gap-2 disabled:cursor-wait disabled:opacity-70">
+            {t(status === "sending" ? "Sending..." : "Send Message")}<ArrowRight className="h-4 w-4" aria-hidden="true" />
           </button>
-
-          <p className="text-center text-sm text-black">
-            {result || "We reply within 48 hours."}
-          </p>
+          <p role="status" aria-live="polite" aria-atomic="true" className="text-center text-sm text-black">{t(statusText[status])}</p>
         </form>
       </div>
     </section>
   );
 }
-
-

@@ -13,8 +13,8 @@ export function IdealFit() {
       className="px-4 py-16 md:px-16"
       style={{
         background:
-          "linear-gradient(184deg, rgba(115,26,202, 0.05) 0%, rgba(115,26,202, 0) 50%, rgba(115,26,202, 0.05) 100%)",
-        boxShadow: "inset 0 0 0 1px rgba(115,26,202, 0.05)",
+          "linear-gradient(184deg, rgba(0,132,61, 0.05) 0%, rgba(0,132,61, 0) 50%, rgba(0,132,61, 0.05) 100%)",
+        boxShadow: "inset 0 0 0 1px rgba(0,132,61, 0.05)",
       }}
     >
       <div className="spotlight-content space-y-12">

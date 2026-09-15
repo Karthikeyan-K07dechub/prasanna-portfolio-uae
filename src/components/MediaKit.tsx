@@ -28,7 +28,7 @@ export function MediaKit() {
         <div
           className="h-96 w-full max-w-4xl rounded-full opacity-80"
           style={{
-            background: "radial-gradient(circle at 50% 50%, rgba(115,26,202, 0.08) 0%, rgba(115,26,202, 0) 70%)",
+            background: "radial-gradient(circle at 50% 50%, rgba(0,132,61, 0.08) 0%, rgba(0,132,61, 0) 70%)",
           }}
         />
       </div>
@@ -38,7 +38,7 @@ export function MediaKit() {
           <span className="text-sm font-medium text-black">For Event Organizers</span>
           <h2 className="mt-2 text-5xl font-bold">Media Kit</h2>
           <p className="mt-4 text-lg text-black">
-            Everything you need to promote Prasanna&apos;s appearance at your event.
+            Everything you need to promote Anas&apos;s appearance at your event.
           </p>
         </div>
 
@@ -105,10 +105,10 @@ export function MediaKit() {
 
           <div className="grid gap-3 lg:grid-cols-[1fr_1.2fr]">
             <div className="relative overflow-hidden rounded-2xl bg-brand/5">
-              <div className="relative aspect-[3/4] min-h-[400px] bg-[#ffffff] w-full overflow-hidden">
+              <div className="relative aspect-[3/4] min-h-[400px] bg-sand w-full overflow-hidden">
                 <Image
                   src={images.headshots[activeHeadshot]}
-                  alt={`Prasanna EL headshot ${activeHeadshot + 1}`}
+                  alt={`Anas headshot ${activeHeadshot + 1}`}
                   fill
                   className="object-cover"
                   sizes="500px"
@@ -183,7 +183,7 @@ export function MediaKit() {
         </div>
 
         <div className="rounded-2xl border border-black/5 bg-cod-gray/30 p-8 text-center">
-          <p className="font-medium">Ready to book Prasanna for your event?</p>
+          <p className="font-medium">Ready to book Anas for your event?</p>
           <p className="mt-2 text-sm text-black">
             Contact: <ExternalLinkText href="mailto:prasanna@dechub.in">prasanna@dechub.in</ExternalLinkText>
           </p>
