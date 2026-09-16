@@ -26,7 +26,7 @@ const timelineItems = [
     title: "Founding Dechub",
     description:
       "Founded Dechub while continuing his corporate career, with a vision to bring brand, design, marketing, and technology together to address business challenges.",
-    image: "/images/founded-year.png",
+    image: "/images/2021-new.png",
     imageAlt: "Dechub foundation year",
   },
   {
@@ -42,7 +42,7 @@ const timelineItems = [
     title: "Growing into an Integrated Partner",
     description:
       "Our relationship with the Titan ecosystem grew further through projects for brands such as Tanishq and Mia by Tanishq. We also expanded beyond design into UI/UX, digital platforms, development and technology-enabled execution.",
-    image: "/images/2025.png",
+    image: "/images/2023-new.png",
     imageAlt: "Dechub as an integrated partner",
   },
   {
@@ -58,7 +58,7 @@ const timelineItems = [
     title: "Strengthening Our Ecosystem",
     description:
       "We brought our design, marketing and technology capabilities together into a more connected service ecosystem. Our growing multidisciplinary team enabled us to manage projects from strategy and creative development through to technology implementation and ongoing support.",
-    image: "/images/2025-new.png",
+    image: "/images/2025-new1.png",
     imageAlt: "Dechub's connected service ecosystem",
   },
   {
@@ -80,7 +80,7 @@ const metrics = [
 
 export function AboutJourney() {
   const { t } = useLanguage();
-  const [activeYear, setActiveYear] = useState(timelineItems[0].year);
+  const [activeYear, setActiveYear] = useState("2012–2023");
   const activeItem = timelineItems.find((item) => item.year === activeYear) ?? timelineItems[0];
 
   return (

@@ -25,7 +25,7 @@ export function BeyondStage() {
           <div className="flex justify-center pt-2 sm:justify-start"><PrimaryButton href="https://www.dechub.in/" external>{t("Explore Dechub")}</PrimaryButton></div>
         </div>
         <div data-reveal className="relative aspect-video overflow-hidden rounded-3xl border border-black/10">
-          <Image src="/images/dechub/dechub-team.png" alt={t("Dechub logo surrounded by brand, design, technology, and automation visuals")} fill sizes="(max-width: 1023px) 100vw, 540px" className="object-cover object-[center_56%]" />
+          <Image src="/images/dechub-intro.png" alt={t("Dechub logo surrounded by brand, design, technology, and automation visuals")} fill sizes="(max-width: 1023px) 100vw, 540px" className="object-cover object-center" />
         </div>
       </div>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -41,20 +41,21 @@ export function BeyondStage() {
         </article>
       </div>
       <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-black/15 pt-6">
-        <span className="me-2 text-sm font-semibold">{t("Industry focus")}</span>
-        {["Retail", "Real estate", "Healthcare", "Hospitality"].map(item => <span key={item} className="rounded-full border border-black/15 px-4 py-2 text-sm">{t(item)}</span>)}
+        <span className="me-2 rounded-full bg-brand/10 px-4 py-2 text-sm font-bold text-brand">{t("Industry focus")}</span>
+        {["Retail", "Jewellery", "Automobile", "Real estate", "Healthcare", "Hospitality"].map(item => <span key={item} className="rounded-full border border-brand/20 bg-white px-4 py-2 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-brand/45 hover:bg-brand/5 hover:text-brand">{t(item)}</span>)}
       </div>
       <div className="mt-8 border-t border-black/15 pt-6">
         <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <h3 className="text-2xl font-semibold text-section-title">{t("How Dechub works")}</h3>
           <p className="max-w-xl text-sm leading-6 text-black">{t("Dechub’s process connects strategic direction with design, implementation, and continuous improvement.")}</p>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:before:absolute lg:before:left-8 lg:before:right-8 lg:before:top-7 lg:before:h-px lg:before:bg-gradient-to-r lg:before:from-brand/0 lg:before:via-brand/35 lg:before:to-brand/0">
           {steps.map((step, i) => (
-            <article key={t(step.title)} className="rounded-2xl border border-black/15 bg-surface p-4">
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3"><step.icon className="h-5 w-5 text-black" aria-hidden="true" /><h4 className="text-base font-semibold">{t(step.title)}</h4></div>
-                <span className="text-xs tabular-nums text-black/60">0{i + 1}</span>
+            <article key={t(step.title)} className="group relative rounded-2xl border border-black/15 bg-surface p-4 transition duration-300 hover:-translate-y-1 hover:border-brand/35 hover:shadow-[0_10px_24px_rgba(0,132,61,0.12)]">
+              <div className="absolute inset-x-4 top-0 h-1 rounded-b-full bg-brand/0 transition-colors group-hover:bg-brand" aria-hidden="true" />
+              <div className="relative flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-full border border-brand/20 bg-brand/5 text-brand transition-colors group-hover:bg-brand group-hover:text-white"><step.icon className="h-4 w-4" aria-hidden="true" /></span><h4 className="text-base font-semibold">{t(step.title)}</h4></div>
+                <span className="rounded-full bg-sand-light px-2 py-1 text-xs tabular-nums text-section-title">0{i + 1}</span>
               </div>
               <p className="mt-3 text-sm leading-6">{t(step.description)}</p>
             </article>

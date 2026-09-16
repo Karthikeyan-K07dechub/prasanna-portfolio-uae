@@ -4,6 +4,7 @@ import { BeyondStage } from "@/components/BeyondStage";
 import { Contact } from "@/components/Contact";
 import { ExperienceCards } from "@/components/ExperienceCards";
 import { Footer } from "@/components/Footer";
+import { FloatingContactButton } from "@/components/FloatingContactButton";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { OnStage } from "@/components/OnStage";
@@ -28,6 +29,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <FloatingContactButton />
     </>
   );
 }
