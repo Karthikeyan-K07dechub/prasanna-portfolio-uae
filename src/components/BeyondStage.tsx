@@ -2,14 +2,21 @@
 
 import { useLanguage } from "./LanguageProvider";
 import Image from "next/image";
-import { Layers, Workflow } from "lucide-react";
+import { Layers, PenTool, Search, TrendingUp, Workflow } from "lucide-react";
 import { PrimaryButton } from "./ui/Button";
 import { PortfolioSection } from "./ui/PortfolioSection";
+
+const steps = [
+  { icon: Search, title: "Discover", description: "Understand the business, its audience, and the challenges before defining a clear direction." },
+  { icon: PenTool, title: "Design", description: "Shape brand and digital experiences around real customer needs and business objectives." },
+  { icon: Workflow, title: "Integrate", description: "Connect the tools, technology, and workflows that support consistent execution." },
+  { icon: TrendingUp, title: "Grow", description: "Refine through campaigns, testing, reporting, and ongoing optimization." },
+];
 
 export function BeyondStage() {
   const { t } = useLanguage();
   return (
-    <PortfolioSection id="beyond" eyebrow={t("03 / Building Dechub")} title={<>{t("One connected")} <span className="font-playfair italic">{t("experience.")}</span></>} description={t("Bringing brand, design, technology, and execution together around the needs of a business.")}>
+    <PortfolioSection id="beyond" eyebrow={t("02 / Building Dechub")} title={<>{t("One connected")} <span className="font-playfair italic">{t("experience.")}</span></>} description={t("Bringing brand, design, technology, and execution together around the needs of a business.")}>
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <div data-reveal className="space-y-5 text-base leading-8">
           <h3 className="text-2xl font-semibold">{t("The belief behind Dechub")}</h3>
@@ -36,6 +43,23 @@ export function BeyondStage() {
       <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-black/15 pt-6">
         <span className="me-2 text-sm font-semibold">{t("Industry focus")}</span>
         {["Retail", "Real estate", "Healthcare", "Hospitality"].map(item => <span key={item} className="rounded-full border border-black/15 px-4 py-2 text-sm">{t(item)}</span>)}
+      </div>
+      <div className="mt-8 border-t border-black/15 pt-6">
+        <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <h3 className="text-2xl font-semibold text-section-title">{t("How Dechub works")}</h3>
+          <p className="max-w-xl text-sm leading-6 text-black">{t("Dechub’s process connects strategic direction with design, implementation, and continuous improvement.")}</p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, i) => (
+            <article key={t(step.title)} className="rounded-2xl border border-black/15 bg-surface p-4">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3"><step.icon className="h-5 w-5 text-black" aria-hidden="true" /><h4 className="text-base font-semibold">{t(step.title)}</h4></div>
+                <span className="text-xs tabular-nums text-black/60">0{i + 1}</span>
+              </div>
+              <p className="mt-3 text-sm leading-6">{t(step.description)}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </PortfolioSection>
   );

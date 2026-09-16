@@ -13,7 +13,7 @@ const areas = [
 export function SpeakingTopics() {
   const { t } = useLanguage();
   return (
-    <PortfolioSection id="expertise" eyebrow={t("02 / Areas of focus")} title={<>{t("Where strategy meets")} <span className="font-playfair italic">{t("execution.")}</span></>} description={t("The disciplines that shape Anas’s approach and the work of the company he leads.")} tinted>
+    <PortfolioSection id="expertise" eyebrow={t("03 / Areas of focus")} title={<>{t("Where strategy meets")} <span className="font-playfair italic">{t("execution.")}</span></>} description={t("The disciplines that shape Anas’s approach and the work of the company he leads.")} tinted>
       <div className="divide-y divide-black/15 border-y border-black/15">
         {areas.map((area, index) => (
           <article key={t(area.title)} className="grid gap-4 py-7 text-center sm:py-8 sm:text-start lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">

@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { AboutJourney } from "@/components/AboutJourney";
 import { BeyondStage } from "@/components/BeyondStage";
 import { Contact } from "@/components/Contact";
 import { ExperienceCards } from "@/components/ExperienceCards";
@@ -6,7 +7,6 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { OnStage } from "@/components/OnStage";
-import { PostEvent } from "@/components/PostEvent";
 import { QuoteSection } from "@/components/QuoteSection";
 import { SpeakingTopics } from "@/components/SpeakingTopics";
 import { ScrollMotion } from "@/components/ScrollMotion";
@@ -19,10 +19,10 @@ export default function Home() {
       <main className="overflow-x-hidden">
         <Hero />
         <About />
-        <SpeakingTopics />
+        <AboutJourney />
         <BeyondStage />
+        <SpeakingTopics />
         <OnStage />
-        <PostEvent />
         <ExperienceCards />
         <QuoteSection />
         <Contact />

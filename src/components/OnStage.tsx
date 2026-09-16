@@ -11,8 +11,10 @@ export function OnStage() {
     <PortfolioSection id="work" eyebrow={t("04 / Selected work")} title={<>{t("Ideas brought to")} <span className="font-playfair italic">{t("life.")}</span></>} description={t("A selection of brand and digital work, including projects from Dechub and examples from Anas’s professional portfolio.")} tinted>
       <article className="overflow-hidden rounded-3xl border border-black/15 bg-surface">
         <div className="grid lg:grid-cols-[1.2fr_1fr]">
-          <div className="relative aspect-video self-center bg-surface">
-            <Image src="/images/projects/tanishqcase.png" alt={t("Tanishq store discovery interface showing city selection and nearby boutiques")} fill sizes="(max-width: 1023px) 100vw, 620px" className="object-contain" />
+          <div className="bg-surface p-4 sm:p-6">
+            <div className="relative aspect-[1823/863] overflow-hidden rounded-2xl bg-sand-light">
+              <Image src="/images/projects/tanishqcase.png?v=quality" alt={t("Tanishq store discovery interface showing city selection and nearby boutiques")} fill sizes="(max-width: 1023px) 100vw, 620px" className="object-contain" />
+            </div>
           </div>
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
             <p className="text-xs font-semibold uppercase tracking-widest">{t("Dechub project / Digital experience")}</p>

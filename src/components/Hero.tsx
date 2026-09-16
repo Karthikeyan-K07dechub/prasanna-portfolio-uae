@@ -9,24 +9,26 @@ import { OutlineButton, PrimaryButton } from "./ui/Button";
 export function Hero() {
   const { t } = useLanguage();
   return (
-    <section id="hero" className="relative min-h-svh overflow-hidden">
+    <section id="hero" className="relative min-h-[74svh] overflow-hidden sm:min-h-svh">
       <div className="absolute inset-0">
-        <Image
-          src="/images/dubai-hero-bg.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="pointer-events-none object-cover object-center"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-x-0 -top-36 bottom-0 sm:inset-0">
+          <Image
+            src="/images/dubai-hero-bg.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="pointer-events-none scale-[1.16] object-cover object-center sm:scale-100"
+            aria-hidden="true"
+          />
+        </div>
         <div className="absolute inset-x-0 top-0 h-[75%] overflow-hidden sm:h-full">
           <Image
             src={images.hero}
             alt={t("Anas, founder of Dechub")}
             fill
             priority
-            className="origin-bottom scale-[0.85] object-contain object-bottom"
+            className="origin-bottom scale-[1.2] object-contain object-[50%_74%] sm:scale-[0.85] sm:object-bottom"
             sizes="100vw"
           />
           <div
@@ -46,20 +48,20 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 flex min-h-svh flex-col justify-end pb-10 pt-[55svh] sm:pb-16 lg:pt-40">
+      <div className="relative z-10 flex min-h-[74svh] flex-col justify-end pb-10 pt-[30svh] sm:min-h-svh sm:pb-16 sm:pt-[55svh] lg:pt-40">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-5 sm:space-y-8">
             <h1 aria-label={t("Anas")} className="font-playfair text-[clamp(2.75rem,8vw,6rem)] font-medium italic leading-[1.12] tracking-[-0.05em]">
-              <span aria-hidden="true" className="uae-flag-text-red">A</span><span aria-hidden="true" className="uae-flag-text -ms-[0.08em]">nas</span>
+              <span className="text-section-title">{t("Anas")}</span>
             </h1>
-            <p className="max-w-xl rounded-xl bg-transparent p-4 text-lg leading-7 text-black sm:bg-sand/90 md:text-xl md:leading-7 lg:rounded-none lg:bg-transparent lg:p-0">
+            <p className="max-w-xl rounded-xl bg-transparent text-lg leading-7 text-black sm:bg-sand/90 sm:p-4 md:text-xl md:leading-7 lg:rounded-none lg:bg-transparent lg:p-0">
               {t("Founder of Dechub. Bringing design, marketing, and technology together to help brands grow.")} </p>
           </div>
 
           <div className="mt-8 flex flex-col items-start justify-between gap-6 sm:mt-12 lg:flex-row lg:items-end">
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
               <PrimaryButton href="#contact">{t("Let's Connect")}</PrimaryButton>
-              <OutlineButton href="#work">{t("Explore Our Work")}</OutlineButton>
+              <OutlineButton href="#beyond">{t("Explore Our Dechub")}</OutlineButton>
             </div>
             <a
               href="https://www.dechub.in/"
