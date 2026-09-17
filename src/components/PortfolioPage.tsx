@@ -6,6 +6,7 @@ import { ExperienceCards } from "@/components/ExperienceCards";
 import { Footer } from "@/components/Footer";
 import { FloatingContactButton } from "@/components/FloatingContactButton";
 import { Hero } from "@/components/Hero";
+import { LanguageChoiceOverlay } from "@/components/LanguageChoiceOverlay";
 import { Navbar } from "@/components/Navbar";
 import { OnStage } from "@/components/OnStage";
 import { QuoteSection } from "@/components/QuoteSection";
@@ -16,13 +17,14 @@ export default function Home() {
   return (
     <>
       <ScrollMotion />
+      <LanguageChoiceOverlay />
       <Navbar />
       <main className="overflow-x-hidden">
         <Hero />
         <About />
         <AboutJourney />
-        <BeyondStage />
         <SpeakingTopics />
+        <BeyondStage />
         <OnStage />
         <ExperienceCards />
         <QuoteSection />

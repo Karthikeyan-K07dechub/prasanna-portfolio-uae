@@ -6,7 +6,7 @@ import { PortfolioSection } from "./ui/PortfolioSection";
 export function QuoteSection() {
   const { t } = useLanguage();
   return (
-    <PortfolioSection id="philosophy" eyebrow={t("06 / Founder philosophy")} title={<>{t("Discipline. Clarity.")} <span className="font-playfair italic">{t("Continuous improvement.")}</span></>}>
+    <PortfolioSection id="philosophy" eyebrow={t("07 / Founder philosophy")} title={<>{t("Discipline. Clarity.")} <span className="font-playfair italic">{t("Continuous improvement.")}</span></>}>
       <div data-reveal className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
         <p className="text-lg leading-8">{t("Anas’s outlook is shaped by persistence, strategic thinking, and a commitment to improving over time. His black belt in Karate reflects the discipline he values beyond business and brings into his professional life.")}</p>
         <div className="border-s-2 border-black ps-6">

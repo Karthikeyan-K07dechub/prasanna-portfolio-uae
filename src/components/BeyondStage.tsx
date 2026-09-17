@@ -16,7 +16,7 @@ const steps = [
 export function BeyondStage() {
   const { t } = useLanguage();
   return (
-    <PortfolioSection id="beyond" eyebrow={t("02 / Building Dechub")} title={<>{t("One connected")} <span className="font-playfair italic">{t("experience.")}</span></>} description={t("Bringing brand, design, technology, and execution together around the needs of a business.")}>
+    <PortfolioSection id="beyond" eyebrow={t("04 / Building Dechub")} title={<>{t("One connected")} <span className="font-playfair italic">{t("experience.")}</span></>} description={t("Bringing brand, design, technology, and execution together around the needs of a business.")}>
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <div data-reveal className="space-y-5 text-base leading-8">
           <h3 className="text-2xl font-semibold">{t("The belief behind Dechub")}</h3>

@@ -14,7 +14,7 @@ const insights = [
 export function ExperienceCards() {
   const { t } = useLanguage();
   return (
-    <PortfolioSection id="insights" eyebrow={t("05 / Insights & perspectives")} title={<>{t("Thinking behind the")} <span className="font-playfair italic">{t("work.")}</span></>} description={t("Perspectives on AI, customer experience, and how businesses communicate, published by Anas on LinkedIn.")} tinted>
+    <PortfolioSection id="insights" eyebrow={t("06 / Insights & perspectives")} title={<>{t("Thinking behind the")} <span className="font-playfair italic">{t("work.")}</span></>} description={t("Perspectives on AI, customer experience, and how businesses communicate, published by Anas on LinkedIn.")} tinted>
       <div className="grid gap-6 lg:grid-cols-3">
         {insights.map(item => (
           <article key={t(item.title)} className="flex h-full flex-col rounded-2xl border border-black/15 bg-surface p-6 sm:p-8">

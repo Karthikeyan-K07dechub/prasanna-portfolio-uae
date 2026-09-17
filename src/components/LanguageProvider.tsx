@@ -25,6 +25,7 @@ export function LanguageSwitch() {
       onClick={(event) => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
+        try { localStorage.setItem("anas-preferred-language", target); } catch { /* Preference storage is optional. */ }
         const sections = [...document.querySelectorAll<HTMLElement>("main > section")];
         const currentSection = sections.find(section => {
           const bounds = section.getBoundingClientRect();

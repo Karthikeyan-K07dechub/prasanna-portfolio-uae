@@ -41,7 +41,7 @@ const projects = [
 export function OnStage() {
   const { t } = useLanguage();
   return (
-    <PortfolioSection id="work" eyebrow={t("04 / Selected work")} title={<>{t("Ideas brought to")} <span className="font-playfair italic">{t("life.")}</span></>} description={t("A selection of brand and digital work, including projects from Dechub and examples from Anas’s professional portfolio.")} tinted>
+    <PortfolioSection id="work" eyebrow={t("05 / Selected work")} title={<>{t("Ideas brought to")} <span className="font-playfair italic">{t("life.")}</span></>} description={t("A selection of brand and digital work, including projects from Dechub and examples from Anas’s professional portfolio.")} tinted>
       <div className="grid gap-6">
         {projects.map((project) => (
           <article key={t(project.title)} tabIndex={0} className="group relative isolate overflow-hidden rounded-3xl border border-black/15 bg-surface transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-brand/35 hover:shadow-[0_24px_55px_rgba(0,132,61,0.16)] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
