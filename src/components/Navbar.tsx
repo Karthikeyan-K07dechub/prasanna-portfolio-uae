@@ -45,16 +45,21 @@ export function Navbar() {
   return (
     <nav ref={navRef} aria-label={t("Main navigation")} className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-6">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-2xl border border-black/5 bg-surface px-3 py-3 shadow-[inset_0_0_0_1px_rgba(0,132,61,0.05)] backdrop-blur-xl sm:px-6 sm:py-4">
-        <Link href="#hero" onClick={() => setMenuOpen(false)} className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <Image
-            src={images.avatar}
-            alt={t("Anas logo")}
-            width={36}
-            height={36}
-            className="h-9 w-9 shrink-0 rounded-full object-cover object-center"
-          />
-          <span className="font-playfair whitespace-nowrap text-base font-bold italic tracking-tight text-section-title sm:text-xl">{t("ANAS")}</span>
-        </Link>
+        <div className="flex shrink-0 items-center gap-3">
+          <Link href="#hero" onClick={() => setMenuOpen(false)} className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <Image
+              src={images.avatar}
+              alt={t("Anas logo")}
+              width={36}
+              height={36}
+              className="h-9 w-9 shrink-0 rounded-full object-cover object-center"
+            />
+            <span className="font-playfair whitespace-nowrap text-base font-bold italic tracking-tight text-section-title sm:text-xl">{t("ANAS")}</span>
+          </Link>
+          <div className="lg:hidden">
+            <LanguageSwitch />
+          </div>
+        </div>
 
         <div className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
@@ -83,7 +88,9 @@ export function Navbar() {
           <PrimaryButton href="#contact" className="!h-auto !rounded-full !px-6 !py-3 !text-sm">
             {t("Contact Anas")} </PrimaryButton>
         </div>
-        <LanguageSwitch />
+        <div className="hidden lg:block">
+          <LanguageSwitch />
+        </div>
         <button ref={toggleRef} type="button" aria-label={menuOpen ? t("Close menu") : t("Open menu")} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)} className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-black/15 focus-visible:outline-2 focus-visible:outline-offset-2 lg:hidden">
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
